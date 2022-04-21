@@ -42,6 +42,13 @@ pub struct BitVector {
     vector: Box<[AtomicUsize]>,
 }
 
+impl dyn_size_of::GetSize for BitVector {
+    fn size_bytes_dyn(&self) -> usize {
+        return self.vector.size_bytes_dyn()
+    }
+    const USES_DYN_MEM: bool = true;
+}
+
 // Custom serializer
 #[cfg(feature = "serde")]
 fn ser_atomic_vec<S>(v: &Box<[AtomicUsize]>, serializer: S) -> Result<S::Ok, S::Error>

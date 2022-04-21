@@ -92,6 +92,13 @@ pub struct Mphf<T> {
     phantom: PhantomData<T>,
 }
 
+impl<T> dyn_size_of::GetSize for Mphf<T> {
+    fn size_bytes_dyn(&self) -> usize {
+        self.bitvecs.size_bytes_dyn() + self.ranks.size_bytes_dyn()
+    }
+    const USES_DYN_MEM: bool = true;
+}
+
 const MAX_ITERS: u64 = 100;
 
 impl<'a, T: 'a + Hash + Debug> Mphf<T> {
