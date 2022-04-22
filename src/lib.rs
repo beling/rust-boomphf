@@ -125,7 +125,7 @@ impl<'a, T: 'a + Hash + Debug> Mphf<T> {
         let mut bitvecs = Vec::new();
         let done_keys = BitVector::new(std::cmp::max(255, n));
 
-        assert!(gamma > 1.01);
+        //assert!(gamma > 1.01);
 
         loop {
             if iter > MAX_ITERS {
@@ -234,7 +234,7 @@ impl<T: Hash + Debug> Mphf<T> {
     /// and the size of the datastructure representing the hash function. See the paper for details.
     /// `max_iters` - None to never stop trying to find a perfect hash (safe if no duplicates).
     pub fn new(gamma: f64, objects: &[T]) -> Mphf<T> {
-        assert!(gamma > 1.01);
+        //assert!(gamma > 1.01);
         let mut bitvecs = Vec::new();
         let mut iter = 0;
 
@@ -364,7 +364,7 @@ impl<T: Hash + Debug + Sync + Send> Mphf<T> {
     /// Same as `new`, but parallelizes work on the rayon default Rayon threadpool.
     /// Configure the number of threads on that threadpool to control CPU usage.
     pub fn new_parallel(gamma: f64, objects: &[T], starting_seed: Option<u64>) -> Mphf<T> {
-        assert!(gamma > 1.01);
+        //assert!(gamma > 1.01);
         let mut bitvecs = Vec::new();
         let mut iter = 0;
 
@@ -546,7 +546,7 @@ impl<'a, T: 'a + Hash + Debug + Send + Sync> Mphf<T> {
         let mut iter: u64 = 0;
         let mut bitvecs = Vec::<BitVector>::new();
 
-        assert!(gamma > 1.01);
+        //assert!(gamma > 1.01);
 
         let global = Arc::new(GlobalContext {
             done_keys: BitVector::new(std::cmp::max(255, n)),
