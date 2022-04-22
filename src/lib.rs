@@ -358,6 +358,24 @@ impl<T: Hash + Debug> Mphf<T> {
 
         None
     }
+
+    pub fn try_hash_bench<Q>(&self, item: &Q, level: &mut u64) -> Option<u64>
+        where
+            T: Borrow<Q>,
+            Q: ?Sized + Hash,
+    {
+        for i in 0..self.bitvecs.len() {
+            let bv = &(self.bitvecs)[i];
+            let hash = hashmod(i as u64, item, bv.capacity());
+
+            if bv.contains(hash as usize) {
+                *level += i as u64 + 1;
+                return Some(self.get_rank(hash, i));
+            }
+        }
+
+        None
+    }
 }
 
 impl<T: Hash + Debug + Sync + Send> Mphf<T> {
