@@ -20,10 +20,10 @@ wyhash = ">=0.3, <=0.5"
 log = "0.4.*"
 dyn_size_of = { version=">=0.3.0", git="https://github.com/beling/bsuccinct-rs" }
 
-[dev-dependencies]
-quickcheck = "1.0.2"
-bencher = ">=0.1"
+#[dev-dependencies]
+#quickcheck = "1.0.2"
+#bencher = ">=0.1"
 
-[[bench]]
-name = "build"
-harness = false
+#[[bench]]
+#name = "build"
+#harness = false
