@@ -1,11 +1,11 @@
 [package]
-name = "boomphf"
+name = "boomphf-patched"
 version = "0.5.9"
 authors = ["Patrick Marks <pmarks@gmail.com>"]
 repository = "https://github.com/10XGenomics/rust-boomphf"
 homepage = "https://github.com/10XGenomics/rust-boomphf"
 license = "MIT"
-description = "Scalable and Efficient Minimal Perfect Hash Functions"
+description = "Scalable and Efficient Minimal Perfect Hash Functions (version modified by Piotr Beling)"
 documentation = "https://10xgenomics.github.io/rust-boomphf/master/boomphf/index.html"
 readme = "README.md"
 keywords = ["hashing", "minimal", "perfect"]
@@ -18,7 +18,7 @@ rayon = ">=1.0"
 crossbeam-utils = ">=0.7.2, <0.9"
 wyhash = ">=0.3, <=0.5"
 log = "0.4.*"
-dyn_size_of = "*"
+dyn_size_of = { version=">=0.3.0", git="https://github.com/beling/bsuccinct-rs" }
 
 [dev-dependencies]
 quickcheck = "1.0.2"

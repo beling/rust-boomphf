@@ -1,3 +1,7 @@
+# Warning
+
+This is a slightly modified (by Peter Beling; for benchmark purposes) version of [boomphf](https://crates.io/crates/boomphf) by Patrick Marks. Please use the [original version](https://crates.io/crates/boomphf) instead of this one.
+
 # Fast and Scalable Minimal Perfect Hash Functions in Rust
 
 A Rust impl of [**Fast and scalable minimal perfect hashing for massive key sets**](https://arxiv.org/abs/1702.03154).
