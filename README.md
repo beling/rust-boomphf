@@ -1,6 +1,6 @@
 # Warning
 
-This is a slightly modified (by Peter Beling; for benchmark purposes) version of [boomphf](https://crates.io/crates/boomphf) by Patrick Marks. Please use the [original version](https://crates.io/crates/boomphf) instead of this one.
+This is a slightly modified (by Piotr Beling; for benchmark purposes) version of [boomphf](https://crates.io/crates/boomphf) by Patrick Marks. Please use the [original version](https://crates.io/crates/boomphf) instead of this one.
 
 # Fast and Scalable Minimal Perfect Hash Functions in Rust
 
